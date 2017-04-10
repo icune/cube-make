@@ -1,0 +1,3 @@
+[submodule "com/NumericInput"]
+	path = com/NumericInput
+	url = https://github.com/joshuadeleon/NumericInput
