@@ -44,6 +44,19 @@ $(function(){
 		}
 	}
 
+	function numKeys($el) {
+
+		$el.keydown(function(e){
+			if(e.keyCode == 38) {
+				$el.val(parseInt($el.val())+1);
+			}
+			if(e.keyCode == 40) {
+				$el.val(parseInt($el.val())-1);
+			}
+		});
+
+	}
+
 	function Ret($el, ext){
 		var ret = {
 			$el : $el,
@@ -80,6 +93,7 @@ $(function(){
 		$inp.val(params.default);
 		if (params.type == 'int') {
 			$inp.addClass('form-control');
+			numKeys($inp);
 			$inp.numericInput({min:0,max:100000});
 		} else if (params.type == 'color'){
 			$inp.addClass('form-control');
